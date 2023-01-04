@@ -14,9 +14,11 @@ const getCookie = (name) => (
 
 var cookieTheme = getCookie("theme");
 if (cookieTheme == "dark") {
+    r.style.setProperty('--theme', 'dark');
     darkTheme();
     document.getElementsByClassName("switch").item(0).children.item(0).checked = false;
 } else if (cookieTheme == "light") {
+    r.style.setProperty('--theme', 'light');
     lightTheme();
     document.getElementsByClassName("switch").item(0).children.item(0).checked = true;
 } else {
