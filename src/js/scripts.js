@@ -1,6 +1,6 @@
 var r = document.querySelector(':root');
 r.style.setProperty('--theme', 'dark');
-let cookieTheme = getCookie("theme");
+var cookieTheme = getCookie("theme");
 if (cookieTheme != "") {
     if (cookieTheme == "dark") {
         darkTheme();
@@ -11,6 +11,7 @@ if (cookieTheme != "") {
     } else {
         darkTheme();
         document.getElementsByClassName("switch").item(0).children.item(0).checked = false;
+        setCookie("theme", "dark", 30);
     }
     
 }
@@ -46,13 +47,13 @@ function themeSwitch() {
     // if the current theme is dark, switch to light
     if (currentTheme == 'dark') {
         r.style.setProperty('--theme', 'light');
-        setCookie("theme", "light", 30)
+        setCookie("theme", "light", 30);
         lightTheme();
     }
     // if the current theme is light, switch to dark
     else {
         r.style.setProperty('--theme', 'dark');
-        setCookie("theme", "dark", 30)
+        setCookie("theme", "dark", 30);
         darkTheme();
     }
 
