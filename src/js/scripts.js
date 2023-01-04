@@ -12,6 +12,11 @@ const getCookie = (name) => (
     document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
 )
 
+var cookieAccepted = getCookie("cookie")
+if (cookieAccepted == true) {
+    document.getElementsByClassName('cookieadvise').item(0).style.display = 'none';
+}
+
 var cookieTheme = getCookie("theme");
 if (cookieTheme == "dark") {
     r.style.setProperty('--theme', 'dark');
@@ -73,4 +78,9 @@ function darkTheme() {
 // make the function rickroll
 function rickroll() {
     window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+}
+
+function closeCookies() {
+    document.getElementsByClassName('cookieadvise').item(0).style.display = 'none';
+    setCookie("cookie", true, 7)
 }

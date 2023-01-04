@@ -179,3 +179,29 @@ input:checked + .slider:before {
 a:visited.link {
     color: var(--8);
 }
+
+.cookieadvise {
+    background-color: var(--1);
+    padding: 16px;
+    position: fixed;
+    bottom: 0px;
+}
+
+.cookieadvise span {
+    padding: 10px 10px;
+}
+
+.cookieadvise button {
+    background-color: var(--4); 
+    border: none;
+    color: var(--10);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.cookieadvise button:hover {
+    background-color: var(--6); 
+}
