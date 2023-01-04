@@ -111,6 +111,7 @@ body {
     .topnav input[type=text], .topnav input[type=number] {
         border: 1px solid var(--9);  
     }
+
 }
   
 .switch {
@@ -180,6 +181,7 @@ a:visited.link {
     color: var(--8);
 }
 
+/* TODO sistemare il cookie per far scomparire la schermata dei cookie e sistemare la visibilità da mobile*/
 .cookieadvise {
     background-color: var(--1);
     padding: 16px;
