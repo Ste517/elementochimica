@@ -13,7 +13,7 @@ const getCookie = (name) => (
 )
 
 var cookieAccepted = getCookie("cookie")
-if (cookieAccepted == true) {
+if (cookieAccepted == "true") {
     document.getElementsByClassName('cookieadvise').item(0).style.display = 'none';
 }
 
@@ -82,5 +82,5 @@ function rickroll() {
 
 function closeCookies() {
     document.getElementsByClassName('cookieadvise').item(0).style.display = 'none';
-    setCookie("cookie", true, 7)
+    setCookie("cookie", "true", 7)
 }
