@@ -1,4 +1,32 @@
 var r = document.querySelector(':root');
+r.style.setProperty('--theme', 'dark');
+var theme = getCookie("theme");
+if (theme != "") {
+    r.style.setProperty('--theme', theme);
+}
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
 function themeSwitch() {
     // get the current theme
@@ -6,11 +34,13 @@ function themeSwitch() {
     // if the current theme is dark, switch to light
     if (currentTheme == 'dark') {
         r.style.setProperty('--theme', 'light');
+        setCookie("theme", "light", 30)
         lightTheme();
     }
     // if the current theme is light, switch to dark
     else {
         r.style.setProperty('--theme', 'dark');
+        setCookie("theme", "dark", 30)
         darkTheme();
     }
 
@@ -42,6 +72,6 @@ function darkTheme() {
 }
 
 // make the function rickroll
-function rickroll() {
-	window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-}
+// function rickroll() {
+//	window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+//}
