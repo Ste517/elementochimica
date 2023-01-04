@@ -1,5 +1,17 @@
 var r = document.querySelector(':root');
 r.style.setProperty('--theme', 'dark');
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+const getCookie = (name) => (
+    document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+)
+
 var cookieTheme = getCookie("theme");
 if (cookieTheme == "dark") {
     darkTheme();
@@ -12,19 +24,6 @@ if (cookieTheme == "dark") {
     document.getElementsByClassName("switch").item(0).children.item(0).checked = false;
     setCookie("theme", "dark", 30);
 }
-
-console.log();
-
-function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-const getCookie = (name) => (
-    document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
-)
 
 function themeSwitch() {
     // get the current theme
