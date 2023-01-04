@@ -1,6 +1,21 @@
 var r = document.querySelector(':root');
 r.style.setProperty('--theme', 'dark');
-console.log(getCookie("theme"));
+let cookieTheme = getCookie("theme");
+if (cookieTheme != "") {
+    if (cookieTheme == "dark") {
+        darkTheme();
+        document.getElementsByClassName("switch").item(0).children.item(0).checked = false;
+    } else if (cookieTheme == "light") {
+        lightTheme();
+        document.getElementsByClassName("switch").item(0).children.item(0).checked = true;
+    } else {
+        darkTheme();
+        document.getElementsByClassName("switch").item(0).children.item(0).checked = false;
+    }
+    
+}
+
+console.log();
 
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
