@@ -1,9 +1,7 @@
 var r = document.querySelector(':root');
 r.style.setProperty('--theme', 'dark');
 var theme = getCookie("theme");
-if (theme != "") {
-    r.style.setProperty('--theme', theme);
-}
+console.log(theme);
 
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
