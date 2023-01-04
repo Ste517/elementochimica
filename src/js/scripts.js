@@ -1,6 +1,6 @@
 var r = document.querySelector(':root');
 r.style.setProperty('--theme', 'dark');
-var theme = getCookie("theme");
+let theme = getCookie("theme");
 console.log(theme);
 
 function setCookie(cname, cvalue, exdays) {
