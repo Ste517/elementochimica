@@ -177,6 +177,18 @@ input:checked + .slider:before {
     color: var(--10);
 }
 
+p a {
+    color: var(--10);
+}
+
+p a:visited {
+    color: var(--8);
+}
+
+a.link {
+    color: var(--10);
+}
+
 a:visited.link {
     color: var(--8);
 }
