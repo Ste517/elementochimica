@@ -193,7 +193,6 @@ a:visited.link {
     color: var(--8);
 }
 
-/* TODO sistemare il cookie per far scomparire la schermata dei cookie e sistemare la visibilità da mobile*/
 .cookieadvise {
     background-color: var(--1);
     padding: 16px;
