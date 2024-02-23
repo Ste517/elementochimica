@@ -111,7 +111,6 @@ body {
     .topnav input[type=text], .topnav input[type=number] {
         border: 1px solid var(--9);  
     }
-
 }
   
 .switch {
@@ -195,13 +194,18 @@ a:visited.link {
 
 .cookieadvise {
     background-color: var(--1);
-    padding: 16px;
+    padding: 8px;
     position: fixed;
     bottom: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .cookieadvise span {
     padding: 10px 10px;
+    top:auto;
+    bottom:auto;
 }
 
 .cookieadvise button {
